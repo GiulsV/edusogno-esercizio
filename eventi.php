@@ -1,4 +1,4 @@
-<?php include('server.php');
+<?php include('./assets/php/database.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,38 +10,29 @@
 
 <body>
     <header>
-        <!-- logo -->
+        <a href="index.php"><img src="assets/img/logo.svg" alt="logo Edusogno"></a>
     </header>
-    <section class="container">
-        <?php if (isset($_SESSION['success'])): ?>
-
-        <div>
-            <div class="containerEventi">
-                <h2>Ciao ecco i tuoi eventi</h2>
-                <div id="eventi">
-                    <?php if (count($eventiUtente) > 0): ?>
-                    <?php foreach ($eventiUtente as $evento): ?>
-
-                    <div class="evento">
-                        <div>
-                            <?= $evento['nome_evento'] ?>
+    <main>
+        <section class="container">
+            <?php if (isset($_SESSION['success'])): ?>       
+                <div class="containerEventi">
+                    <h2>Ciao <?= $name[0]['nome']; ?> <?= $name[0]['cognome']; ?> ecco i tuoi eventi</h2>
+                        <div id="eventi">
+                            <?php if (count($eventiUser) > 0): ?>
+                            <?php foreach ($eventiUser as $evento): ?>
+                                <div class="evento">
+                                    <h3><?= $evento['nome_evento'] ?></h3>
+                                    <div><?= $evento['data_evento'] ?></div>
+                                    <button name="join" class="button">JOIN</button>
+                                </div>
+                            <?php endforeach; ?>
+                            <?php else: ?>
+                            <h3>Non hai eventi</h3>
+                            <?php endif; ?>
                         </div>
-                        <p>
-                            <?= $evento['data_evento'] ?>
-                        </p>
-                        <button name="join" class="button">JOIN</button>
-                    </div>
-
-                    <?php endforeach; ?>
-                    <?php else: ?>
-                    <h3>Non hai eventi</h3>
-                    <?php endif; ?>
                 </div>
-            </div>
-        </div>
-
-        <?php endif ?>
-    </section>
+            <?php endif ?>
+        </section>        
+    </main>
 </body>
-
 </html>

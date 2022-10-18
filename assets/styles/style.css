@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: "DM Sans", sans-serif;
     height: 100vh;
@@ -13,6 +14,7 @@ body {
     background-repeat: no-repeat, repeat;
     background-size: cover;
 }
+
 /* Header  */
 header {
     width: 100vw;
@@ -32,28 +34,22 @@ header {
     border-radius: 0px;
 }
 
-
-
 /* crea account */
 .container {
     height: calc(100vh - 100px);
     width: 100vw;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    /* background: #D9E5F3; */
 }
 
-h1 {
-    /* width: 295px;
-    height: 32px; */
-   
+h1 {   
     font-size: 32px;
     text-align: center;
     color: #134077;
     margin-bottom: 22px;
 }
+
 /*stile form*/
 form {
     display: flex;    
@@ -65,6 +61,7 @@ form {
     border: 1px solid #134077;
     border-radius: 19px;
     padding: 35px;
+    margin-bottom: 3.5rem;
 }
 
 #formLogin {
@@ -132,13 +129,11 @@ h2 {
 .containerEventi {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     height: 100%;
-    width: 70%;
-    padding-top: 200px;
 }
 
 #eventi {
+    z-index: 500;
     margin: 0px auto;
     display: flex;
     justify-content: center;
@@ -150,52 +145,27 @@ h2 {
     border: 1px solid #134077;
     border-radius: 19px;
     width: 350px;
-    height: 220px;
+    margin-left: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.evento h3{
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 36px;
+    color: #231F20;
+}
+
+.evento div{
+    font-size: 20px;
+    color: #CCCCCC;
 }
 
 .evento .button {
-    width: 80%;
-}
-
-
-/* sfondo img */
-.small-sphere,
-.big-sphere,
-.bottom-wave,
-.mid-wave,
-.top-wave,
-.rocket {
-  position: absolute;
-}
-
-.small-sphere {
-  right: 25px;
-  top: 34%;
-}
-.big-sphere {
-  top: 34%;
-}
-.bottom-wave {
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.mid-wave {
-  z-index: -100;
-  left: 0;
-  bottom: 20%;
-  right: 0;
-}
-
-.top-wave {
-  z-index: -999;
-  left: 0;
-  right: 0;
-  bottom: 60%;
-}
-.rocket {
-  z-index: 999;
-  right: 15%;
-  bottom: 40px;
+    width: 100%;
+    margin-top: 35px;
+    /* margin-bottom: 0; */
 }

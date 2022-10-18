@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include('./assets/php/database.php') ?>
 <!DOCTYPE html>
 <html>
 
