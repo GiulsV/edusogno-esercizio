@@ -1,49 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 99.5%;
+    box-sizing: border-box;
+}
+body {
+    font-family: "DM Sans", sans-serif;
+    height: 100vh;
+    background: #d9e5f3;
+    overflow-y: hidden;
+    background-image: url("../img/sfondo.svg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+/* Header  */
+header {
+    width: 100vw;
+    height: 100px;
+    background: #fff;
+    box-shadow: 0px 4px 18px -6px #0057ff;
+    border-radius:0 0 13px 13px;
+    padding: 1.5rem 1.5rem;
+    margin-bottom: 3rem; 
+    display: flex;
+}
+#img_logo{
+    height: 52px;
+    width: 123px;
+    left: 51px;
+    top: 42px;
+    border-radius: 0px;
 }
 
-/* header */
-header {
-    position: fixed;
-    z-index: 100;
-    width: 100vw;
-    height: 163px;
-    left: 0px;
-    top: -36px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 18px -6px #0057FF;
-    border-radius: 13px;
-}
+
 
 /* crea account */
 .container {
+    height: calc(100vh - 100px);
     width: 100vw;
-    height: 100vh;
-    /*margin-top: 127px ;*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    background: #D9E5F3;
+    /* background: #D9E5F3; */
 }
 
 h1 {
-    width: 295px;
-    height: 32px;
+    /* width: 295px;
+    height: 32px; */
    
     font-size: 32px;
     text-align: center;
     color: #134077;
     margin-bottom: 22px;
 }
-
+/*stile form*/
 form {
     display: flex;    
     flex-direction: column;
@@ -57,37 +68,52 @@ form {
 }
 
 #formLogin {
-    height: 434px;
+    height: 400px;
 }
 
 #formRegistration {
-    height: 604px;
+    height: 500px;
 }
 
 .input {
-    height: 20px;
-    width: 100%;
+    height: 30px;
+    width: 85%;
     font-weight: 400;
-    color: #CCCCCC;
+    color: #2a2525;
     border: none;
+    align-self: flex-start;
 }
 
 .label {
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 700;
     color: #231F20;
     width: 100%;
 }
 
-.line {
+hr{
     width: 100%;
-    height: 0px;
     border: 1px solid #2D224C;
 }
 
+.occhio{
+    align-self: flex-end;
+    position: relative;
+}
+
+.occhio > img{
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+}
 
 .button {
     color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 1.5rem !important;
     background: #0057FF;
+    border: none;
     border-radius: 11px;
     width: 577px;
     height: 59px;
@@ -129,4 +155,47 @@ h2 {
 
 .evento .button {
     width: 80%;
+}
+
+
+/* sfondo img */
+.small-sphere,
+.big-sphere,
+.bottom-wave,
+.mid-wave,
+.top-wave,
+.rocket {
+  position: absolute;
+}
+
+.small-sphere {
+  right: 25px;
+  top: 34%;
+}
+.big-sphere {
+  top: 34%;
+}
+.bottom-wave {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mid-wave {
+  z-index: -100;
+  left: 0;
+  bottom: 20%;
+  right: 0;
+}
+
+.top-wave {
+  z-index: -999;
+  left: 0;
+  right: 0;
+  bottom: 60%;
+}
+.rocket {
+  z-index: 999;
+  right: 15%;
+  bottom: 40px;
 }

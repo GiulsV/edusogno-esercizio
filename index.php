@@ -1,49 +1,45 @@
-<?php 
-  session_start(); 
-
-  if (!isset($_SESSION['email'])) {
-  	$_SESSION['msg'] = "È necessario eseguire il login prima";
-  	header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['email']);
-  	header("location: login.php");
-  }
-?>
+<?php include('server.php') ?>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/styles/style.css">
-        <title>Edusogno</title>
-    </head>
-    <body>
+<html>
 
-    <div class="header">
-        <h2>Home Page</h2>
-    </div>
-    <div class="content">
-        <!-- messaggio di notifica -->
-        <?php if (isset($_SESSION['success'])) : ?>
-        <div class="error success" >
-            <h3>
-            <?php 
-                echo $_SESSION['success']; 
-                unset($_SESSION['success']);
-            ?>
-            </h3>
-        </div>
-        <?php endif ?>
+<head>
+	<title>Edusogno</title>
+	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+</head>
 
-        <!-- info utente loggato -->
-        <?php  if (isset($_SESSION['email'])) : ?>
-            <p>Welcome <strong><?php echo $_SESSION['email']; ?></strong></p>
-            <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-        <?php endif ?>
-    </div>
-            
-    </body>
+<body>
+	<header>
+        <img src="./assets/img/logo.svg" alt="logo" id="img_logo">
+    </header>
+<main>
+    <section class="container">
+		<h1>Crea il tuo account</h1>
+        <form method="post" action="index.php" id="formRegistration">
+            <?php include('errors.php'); ?>
+            <label class="label" for="nome">Inserisci il nome*</label>
+            <input class="input" type="text" name="nome" id="nome" placeholder="Nome" required
+                value="<?php echo $nome; ?>">
+            <hr>
+            <label class="label" for="cognome">Inserisci il cognome*</label>
+            <input class="input" type="text" name="cognome" id="cognome" placeholder="Cognome" required
+                value="<?php echo $cognome; ?>">
+            <hr>
+            <label class="label" for="email">Inserisci l'email*</label>
+            <input class="input" type="email" name="email" id="email" placeholder="name@example.com" required
+                value="<?php echo $email; ?>">
+            <hr>
+            <label class="label" for="password">Inserisci la password*</label>
+            <input class="input" type="password" name="password" id="password" placeholder="Scrivila qua" required >
+            <span class="occhio"><img src="./assets/img/occhio.svg" alt="mostra password"></span>
+            <hr>
+            <button type="submit" class="button" name="reg_user" id="buttonRegistration">REGISTRATI</button>
+            <p>
+                Hai già un account? <a href="login.php">Accedi</a>
+            </p>
+        </form>
+	</section>
+</main>
+    <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
