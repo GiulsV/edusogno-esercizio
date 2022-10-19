@@ -43,7 +43,7 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['email'] = $email;
   	$_SESSION['success'] = "Sei loggato";
-  	header('location: ../index.php');
+  	header('location: eventi.php');
   }
 }
 
